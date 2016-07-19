@@ -109,7 +109,7 @@ bool StartScene::init()
     float scaleheight = winheightSize / contentheightSize;
     
     midmidsprite->setScale(scaleheight,scaleheight);
-    loadShader(cocos2d::ccPositionTextureColor_noMVP_vert, "kaichang.fsh",midmidsprite);
+    loadShader(cocos2d::ccPositionTextureColor_noMVP_vert, "shaders1/example_Blur.fsh",midmidsprite);
     midmidsprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(midmidsprite, 0);
     
@@ -118,7 +118,23 @@ bool StartScene::init()
 
 void StartScene::loadShader(const GLchar* vertexShader, const char* frag,Sprite * sprite)
 {
+    std::cout<<frag<<" successfully loaded!"<<"\n";
+    GLchar * fragSource = (GLchar*) String::createWithContentsOfFile(
+                                                                     FileUtils::getInstance()->fullPathForFilename(frag).c_str())->getCString();
 
+//    auto shader = new GLProgram();
+//    shader->initWithByteArrays(vertexShader, fragSource);
+//    shader->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
+//    shader->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORDS);
+//    shader->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
+//    shader->link();
+//    shader->updateUniforms();
+//    shader->use();
+//    sprite->setGLProgram(shader);
+    
+    auto program = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource);
+    auto glProgramState = GLProgramState::getOrCreateWithGLProgram(program);
+    sprite->setGLProgramState(glProgramState);
 }
 
 void StartScene::setShaderwithccPosition(Sprite * sprite,GLProgram* shader)
@@ -163,7 +179,16 @@ void StartScene::menuBackCallback(Ref *pSender)
 
 void StartScene::menuCloseCallback(Ref* pSender)
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+    MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+    return;
+#endif
     
+    Director::getInstance()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
 }
 
 

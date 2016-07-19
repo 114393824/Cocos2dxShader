@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
+		1BF17D671D3E87370002379B /* shaders1 in Resources */ = {isa = PBXBuildFile; fileRef = 1BF17D661D3E87370002379B /* shaders1 */; };
+		1BF17D681D3E87370002379B /* shaders1 in Resources */ = {isa = PBXBuildFile; fileRef = 1BF17D661D3E87370002379B /* shaders1 */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -142,6 +144,7 @@
 /* Begin PBXFileReference section */
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+		1BF17D661D3E87370002379B /* shaders1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders1; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Cocos2dxShader-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocos2dxShader-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -339,6 +342,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BF17D661D3E87370002379B /* shaders1 */,
 				494DE2441D3E4FA700753FA1 /* AboutUs.jpg */,
 				494DE2451D3E4FA700753FA1 /* CloseNormal.png */,
 				494DE2461D3E4FA700753FA1 /* CloseSelected.png */,
@@ -529,6 +533,7 @@
 			files = (
 				494DE2641D3E4FA800753FA1 /* powered.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				1BF17D671D3E87370002379B /* shaders1 in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				494DE26C1D3E4FA800753FA1 /* shaders in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -589,6 +594,7 @@
 				494DE26D1D3E4FA800753FA1 /* shaders in Resources */,
 				494DE2671D3E4FA800753FA1 /* projectfile in Resources */,
 				494DE2631D3E4FA800753FA1 /* Lectures in Resources */,
+				1BF17D681D3E87370002379B /* shaders1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

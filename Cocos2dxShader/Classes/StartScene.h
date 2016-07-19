@@ -10,6 +10,7 @@
 #define StartScene_h
 
 #include "cocos2d.h"
+#include <iostream>
 
 class StartScene : public cocos2d::Layer
 {
